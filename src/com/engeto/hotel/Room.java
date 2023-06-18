@@ -1,6 +1,8 @@
 package com.engeto.hotel;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Room {
 
@@ -13,12 +15,14 @@ public class Room {
     private boolean withSeaView;
 
 
+
     public Room(int room, int numberOfBed, BigDecimal pricePerNight, boolean withBalcony, boolean withSeaView) {
         this.room = room;
         this.numberOfBed = numberOfBed;
         this.pricePerNight = pricePerNight;
         this.withBalcony = withBalcony;
         this.withSeaView = withSeaView;
+
     }
 
     public int getRoom() {
@@ -60,4 +64,18 @@ public class Room {
     public void setWithSeaView(boolean withSeaView) {
         this.withSeaView = withSeaView;
     }
+
+    @Override
+    public String toString() {
+        return "\n" +
+                "room       " + getRoom()+
+                " numberOfBed=" + getNumberOfBed() +
+                " pricePerNight" +getPricePerNight() +
+                " withBalcony " + (isWithBalcony() ? "ANO" : "NE" )+
+                " withSeaView " + (isWithSeaView() ? "ANO" : "NE" ) +
+                 "";
+    }
+
 }
+
+

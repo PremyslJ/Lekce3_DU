@@ -4,11 +4,13 @@ import java.time.LocalDate;
 
 public class Guest {
 
-    private static int idCounter = 1;
-    private int id = idCounter++;
+   // private static int idCounter = 1;
+   // private int id = idCounter++;
     private String name;
     private String surname;
     private LocalDate dateOfBirth;
+
+
 
 
     public Guest(String name, String surname, LocalDate dateOfBirth) {
@@ -22,13 +24,13 @@ public class Guest {
         this.surname = surname;
     }
 
-    public int getId() {
-        return id;
-    }
+  //  public int getId() {
+    //    return id;
+   // }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+  //  public void setId(int id) {
+   //     this.id = id;
+   // }
 
     public String getName() {
         return name;
@@ -51,16 +53,17 @@ public class Guest {
     }
 
     public void setDateOfBirth(LocalDate dateOfBirth) {
+
         this.dateOfBirth = dateOfBirth;
     }
 
     @Override
     public String toString() {
         return
-                "id: " + id +'\n' +
-                "  jméno:         " + name +'\n' +
-                "  příjmění:      " + surname +'\n' +
-                "  datum narození " + dateOfBirth
+
+                "  " + name +"  "+
+                "  " + surname+ " "+
+                " (" + dateOfBirth+")"
                 ;
     }
 }

@@ -6,23 +6,23 @@ import java.util.List;
 public class Booking {
     private static int idCounter = 1;
     private int id = idCounter++;
-    private int room;
+    private  Room room;
     private Guest guest;
     private List<Guest> otherGuests;
     private LocalDate reservationsFrom;
     private LocalDate reservationsTo;
-    private TypeOfStay typeOfStay ;
+    private TypeOfStay typeOfStay;
 
-
-    public Booking(int room, Guest guest, LocalDate reservationsFrom, LocalDate reservationsTo,
-                   TypeOfStay typeOfStay) {
+    public Booking(Room room, Guest guest, LocalDate reservationsFrom, LocalDate reservationsTo, TypeOfStay typeOfStay) {
         this.room = room;
         this.guest = guest;
-       // this.otherGuests = otherGuests;
+     //   this.otherGuests = otherGuests;
         this.reservationsFrom = reservationsFrom;
         this.reservationsTo = reservationsTo;
         this.typeOfStay = typeOfStay;
     }
+
+
 
     public int getId() {
         return id;
@@ -32,11 +32,11 @@ public class Booking {
         this.id = id;
     }
 
-    public int getRoom() {
+    public Room getRoom() {
         return room;
     }
 
-    public void setRoom(int room) {
+    public void setRoom(Room room) {
         this.room = room;
     }
 
@@ -83,15 +83,17 @@ public class Booking {
 
     @Override
     public String toString() {
-        return
-                "  ID rezervace:  " + id +'\n' +
-                "  Pokoj:         " + room +'\n' +
-                "  Host:          " + guest +'\n' +
-                "  Rezervace od:  " + reservationsFrom +'\n' +
-                "  Rezervace do:  " + reservationsTo +'\n' +
-                "  Druh pobytu:   " + typeOfStay +'\n'
-
-
-                ;
+        return "Booking{" +
+                "id=" + id +
+                ", room=" + room +
+                ", guest=" + guest +
+                ", otherGuests=" + otherGuests +
+                ", reservationsFrom=" + reservationsFrom +
+                ", reservationsTo=" + reservationsTo +
+                ", typeOfStay=" + typeOfStay +
+                '}';
     }
 }
+
+
+
