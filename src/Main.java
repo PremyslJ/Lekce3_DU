@@ -132,11 +132,11 @@ public class Main {
             System.out.println("Prvních osm rekreačních rezervací: ");
             bookingManager.getTheFirstEightHolidayReservations();
             System.out.println(""                       );
-            System.out.println("Počet rezervací:"                       );
-          //  System.out.println(bookingManager.getCalculatingTheLengthOfStays());
+            System.out.println("Počet pobytů:"                       );
+           System.out.println(bookingManager.getCalculatingTheLengthOfStays());
             System.out.println(""                       );
             System.out.println("Cena objednávek:"                       );
-         //   bookingManager.getPriceOfOrders();
+            bookingManager.getPriceOfOrders();
 
 
 

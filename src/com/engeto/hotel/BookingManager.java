@@ -1,7 +1,6 @@
 package com.engeto.hotel;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
@@ -85,7 +84,53 @@ public class BookingManager {
 
     }
 
+    public String getCalculatingTheLengthOfStays() {
+        int oneDayStay = 0;
+        int twoDayStay = 0;
+        int moreThatTwoDayStay = 0;
+
+        for (Booking booking : bookings) {
+
+            long time = ChronoUnit.DAYS.between(booking.getReservationsFrom(), booking.getReservationsTo());
+            if (time == 1) {
+                oneDayStay++;
+            } else if (time == 2) {
+                twoDayStay++;
+            } else if (time > 2) {
+                moreThatTwoDayStay++;
+
+            }
+
+        }
+        return "jednodenní pobyt:   " + oneDayStay + "   dvoudenní pobyt:   "
+                + twoDayStay + "   více než dvoudenní pobyt:   " + moreThatTwoDayStay;
+    }
+
+    public void getPriceOfOrders() {
+
+        for (Booking booking : bookings) {
+
+            long timeDay = ChronoUnit.DAYS.between(booking.getReservationsFrom(), booking.getReservationsTo());
+
+            BigDecimal priceOfOthers = BigDecimal.valueOf(timeDay).multiply(booking.getRoom().getPricePerNight());
+            System.out.println(booking.getGuest().getName() + "   " + booking.getGuest().getSurname() + "   (" + booking.getReservationsFrom() +
+                    "  až  " + booking.getReservationsTo() +
+                    ")   Počet dnů:     " + timeDay + "   cena celkem:   " + priceOfOthers);
+        }
+
+
+    }
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
