@@ -6,6 +6,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.chrono.ChronoLocalDate;
+import java.time.temporal.TemporalAmount;
 import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -17,6 +18,14 @@ public class Main {
     public static void main(String[] args) {
 
 
+//        LocalDate zacatek = LocalDate.of(1978, 12, 21);
+//        LocalDate konec = LocalDate.of(2023, 5, 23);
+//
+//        TemporalAmount doba = Period.between(zacatek, konec);
+//        System.out.println("můj věk " + doba.get(ChronoUnit.YEARS) + " let , "+doba.get(ChronoUnit.MONTHS)+" měsíců a " + doba.get(ChronoUnit.DAYS) + " dní");
+//        Zdroj: https://www.itnetwork.cz/java/oop/datum-a-cas-v-jave-8-uprava-a-intervaly
+
+      List<Room>roomList = new ArrayList<>();
 
 
         List<Guest> guestList = new ArrayList<>();
@@ -32,7 +41,7 @@ public class Main {
         guestList.add(new Guest("Alena ", "Krasová ", LocalDate.of(1978, 05, 12)));
 
 
-        List<Room> roomList = new ArrayList<>();
+
 
 
         roomList.add(new Room(1, 1, new BigDecimal(1000), true, true));
@@ -64,7 +73,8 @@ public class Main {
             for (int i = 0; i < 30; i++) {
 
 
-                bookingManager.add(new Booking(roomList.get(1), guestList.get(2), reservationsFrom, reservationsTo, TypeOfStay.TYPEOFVACATION));
+                bookingManager.add(new Booking(roomList.get(1), guestList.get(2),
+                        reservationsFrom, reservationsTo, TypeOfStay.TYPEOFVACATION));
 
                 reservationsFrom = reservationsFrom.plusDays(1);
                 reservationsTo = reservationsTo.plusDays(1);
@@ -117,10 +127,25 @@ public class Main {
             System.out.println(""                       );
             bookingManager.getPrintAllReservations();
             System.out.println(""                       );
+            System.out.println("Průměrný počet hostů na rezervaci: "+bookingManager.getAverageNumberOfGuestsPerReservation());
+            System.out.println(""                       );
             System.out.println("Prvních osm rekreačních rezervací: ");
             bookingManager.getTheFirstEightHolidayReservations();
+            System.out.println(""                       );
+            System.out.println("Počet rezervací:"                       );
+          //  System.out.println(bookingManager.getCalculatingTheLengthOfStays());
+            System.out.println(""                       );
+            System.out.println("Cena objednávek:"                       );
+         //   bookingManager.getPriceOfOrders();
 
-            System.out.println(bookingManager.getNumberOfBookings()/ guestList.size());
+
+
+
+
+
+
+
+
 
 
 
