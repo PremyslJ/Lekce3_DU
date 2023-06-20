@@ -23,7 +23,7 @@ public class Main {
 //
 //        TemporalAmount doba = Period.between(zacatek, konec);
 //        System.out.println("můj věk " + doba.get(ChronoUnit.YEARS) + " let , "+doba.get(ChronoUnit.MONTHS)+" měsíců a " + doba.get(ChronoUnit.DAYS) + " dní");
-//        Zdroj: https://www.itnetwork.cz/java/oop/datum-a-cas-v-jave-8-uprava-a-intervaly
+
 
       List<Room>roomList = new ArrayList<>();
 

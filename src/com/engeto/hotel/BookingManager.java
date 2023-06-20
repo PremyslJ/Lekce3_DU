@@ -23,6 +23,7 @@ public class BookingManager {
     }
 
 
+    // metoda, která vrítí průměrný počet hostůna rezervaci
     public double getAverageNumberOfGuestsPerReservation() {
         double totalGuests = 0;
         for (Booking booking : bookings) {
@@ -31,7 +32,7 @@ public class BookingManager {
         return totalGuests / getNumberOfBookings();
     }
 
-
+    //metoda vrací všechny rezervace
     @Override
     public String toString() {
         return "BookingManager{" +
@@ -39,6 +40,7 @@ public class BookingManager {
                 '}';
     }
 
+    //metoda, která vrátí seznam pracovních pobytů
     public int getNumberOfWorkingBookings() {
         int number = 0;
         for (Booking booking : bookings) {
@@ -50,6 +52,7 @@ public class BookingManager {
         return number;
     }
 
+    //metoda, která vrátí prvních osm rekreačních rezervací
     public void getTheFirstEightHolidayReservations() {
         int i = 0;
 
@@ -58,7 +61,8 @@ public class BookingManager {
                 if (booking.getTypeOfStay() == TypeOfStay.TYPEOFVACATION) {
                     i++;
                     System.out.println(booking.getReservationsFrom() +
-                            "  až  " + booking.getReservationsTo() + "  " + booking.getGuest().getName() + "   " + booking.getGuest().getSurname() +
+                            "  až  " + booking.getReservationsTo() + "  " + booking.getGuest().getName() +
+                            "   " + booking.getGuest().getSurname() +
                             "     (" + booking.getGuest().getDateOfBirth() + ")");
                 }
                 break;
@@ -74,10 +78,11 @@ public class BookingManager {
     public void getPrintAllReservations() {
         for (Booking booking : bookings) {
             System.out.println(booking.getReservationsFrom() +
-                    "  až  " + booking.getReservationsTo() + "  " + booking.getGuest().getName() + "   " + booking.getGuest().getSurname() +
-                    "     (" + booking.getGuest().getDateOfBirth() + "),   [počet lůžek,  "
-                    + booking.getRoom().getNumberOfBed() + ", výhled na moře:   " +
-                    (booking.getRoom().isWithSeaView() ? "ANO" : "NE") + ", s balkonem:   "
+                    "  až  " + booking.getReservationsTo() + "  " + booking.getGuest().getName() +
+                    "   " + booking.getGuest().getSurname() +
+                    "     (" + booking.getGuest().getDateOfBirth() + ");    počet lůžek:  "
+                    + booking.getRoom().getNumberOfBed() + ";  výhled na moře:   " +
+                    (booking.getRoom().isWithSeaView() ? "ANO" : "NE") + " ; s balkonem:   "
                     + (booking.getRoom().isWithBalcony() ? "ANO" : "NE"));
         }
 
@@ -91,7 +96,8 @@ public class BookingManager {
 
         for (Booking booking : bookings) {
 
-            long time = ChronoUnit.DAYS.between(booking.getReservationsFrom(), booking.getReservationsTo());
+            long time = ChronoUnit.DAYS.between(booking.getReservationsFrom(),
+                    booking.getReservationsTo());
             if (time == 1) {
                 oneDayStay++;
             } else if (time == 2) {
@@ -106,6 +112,7 @@ public class BookingManager {
                 + twoDayStay + "   více než dvoudenní pobyt:   " + moreThatTwoDayStay;
     }
 
+    //metoda vrací cenu objednávek
     public void getPriceOfOrders() {
 
         for (Booking booking : bookings) {
@@ -113,9 +120,10 @@ public class BookingManager {
             long timeDay = ChronoUnit.DAYS.between(booking.getReservationsFrom(), booking.getReservationsTo());
 
             BigDecimal priceOfOthers = BigDecimal.valueOf(timeDay).multiply(booking.getRoom().getPricePerNight());
-            System.out.println(booking.getGuest().getName() + "   " + booking.getGuest().getSurname() + "   (" + booking.getReservationsFrom() +
+            System.out.println(booking.getGuest().getName() + "   " + booking.getGuest().getSurname() +
+                    "   (" + booking.getReservationsFrom() +
                     "  až  " + booking.getReservationsTo() +
-                    ")   Počet dnů:     " + timeDay + "   cena celkem:   " + priceOfOthers);
+                    ")   počet dnů:     " + timeDay + "   cena celkem:   " + priceOfOthers + " Kč");
         }
 
 
