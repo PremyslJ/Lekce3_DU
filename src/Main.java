@@ -11,13 +11,6 @@ public class Main {
     public static void main(String[] args) {
 
 
-//        LocalDate zacatek = LocalDate.of(1978, 12, 21);
-//        LocalDate konec = LocalDate.of(2023, 5, 23);
-//
-//        TemporalAmount doba = Period.between(zacatek, konec);
-//        System.out.println("můj věk " + doba.get(ChronoUnit.YEARS) + " let , "+doba.get(ChronoUnit.MONTHS)+" měsíců a " + doba.get(ChronoUnit.DAYS) + " dní");
-
-
         List<Room> roomList = new ArrayList<>();
 
 
@@ -31,7 +24,7 @@ public class Main {
         //  // má index 2
         guestList.add(new Guest("ABC   ", "Relax   ", LocalDate.of(1900, 1, 1)));
         // má index 3
-        guestList.add(new Guest("Alena ", "Krasová ", LocalDate.of(1978, 05, 12)));
+        guestList.add(new Guest("Alena ", "Krasová ", LocalDate.of(1978, 5, 12)));
 
 
         roomList.add(new Room(1, 1, new BigDecimal(1000), true, true));
@@ -107,21 +100,21 @@ public class Main {
 
             }
             System.out.println("Počet rezervací je:  " + bookingManager.getNumberOfBookings());
+            System.out.println("................");
             System.out.println("Počet pracovních pobytů je:  " + bookingManager.getNumberOfWorkingBookings());
 
-            System.out.println("");
+            System.out.println("................");
             System.out.println("Výpis všech rezervací: ");
-            System.out.println("");
             bookingManager.getPrintAllReservations();
-            System.out.println("");
+            System.out.println("................");
             System.out.println("Průměrný počet hostů na rezervaci: " + bookingManager.getAverageNumberOfGuestsPerReservation());
-            System.out.println("");
+            System.out.println("................");
             System.out.println("Prvních osm rekreačních rezervací: ");
             bookingManager.getTheFirstEightHolidayReservations();
-            System.out.println("");
+            System.out.println("................");
             System.out.println("Počet pobytů:");
             System.out.println(bookingManager.getCalculatingTheLengthOfStays());
-            System.out.println("");
+            System.out.println("................");
             System.out.println("Cena objednávek:");
             bookingManager.getPriceOfOrders();
 
