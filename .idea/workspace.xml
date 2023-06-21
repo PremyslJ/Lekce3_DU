@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4d313f0-1ad1-406e-9438-544ae1cf6502" name="Changes" comment="3. přidaná metoda &#10;- getNumberOfWorkingBookings&#10;- getTheFirstEightHolidayReservations&#10;- getNumberOfBookings&#10;- getPrintAllReservations&#10;- getAverageNumberOfGuestsPerReservation&#10;- getPriceOfOrders&#10;- getCalculatingTheLengthOfStays">
+    <list default="true" id="c4d313f0-1ad1-406e-9438-544ae1cf6502" name="Changes" comment="4. Dodělání komentářů">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/engeto/hotel/BookingManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/engeto/hotel/BookingManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,6 +57,7 @@
     <MESSAGE value="3. přidaná metoda &#10;- getNumberOfWorkingBookings&#10;- getTheFirstEightHolidayReservations&#10;- getNumberOfBookings&#10;- getPrintAllReservations" />
     <MESSAGE value="3. přidaná metoda &#10;- getNumberOfWorkingBookings&#10;- getTheFirstEightHolidayReservations&#10;- getNumberOfBookings&#10;- getPrintAllReservations&#10;- getAverageNumberOfGuestsPerReservation" />
     <MESSAGE value="3. přidaná metoda &#10;- getNumberOfWorkingBookings&#10;- getTheFirstEightHolidayReservations&#10;- getNumberOfBookings&#10;- getPrintAllReservations&#10;- getAverageNumberOfGuestsPerReservation&#10;- getPriceOfOrders&#10;- getCalculatingTheLengthOfStays" />
-    <option name="LAST_COMMIT_MESSAGE" value="3. přidaná metoda &#10;- getNumberOfWorkingBookings&#10;- getTheFirstEightHolidayReservations&#10;- getNumberOfBookings&#10;- getPrintAllReservations&#10;- getAverageNumberOfGuestsPerReservation&#10;- getPriceOfOrders&#10;- getCalculatingTheLengthOfStays" />
+    <MESSAGE value="4. Dodělání komentářů" />
+    <option name="LAST_COMMIT_MESSAGE" value="4. Dodělání komentářů" />
   </component>
 </project>

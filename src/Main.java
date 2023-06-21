@@ -4,15 +4,8 @@ import com.engeto.hotel.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.chrono.ChronoLocalDate;
-import java.time.temporal.TemporalAmount;
-import java.util.AbstractList;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-
-import static java.time.LocalDate.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -25,7 +18,7 @@ public class Main {
 //        System.out.println("můj věk " + doba.get(ChronoUnit.YEARS) + " let , "+doba.get(ChronoUnit.MONTHS)+" měsíců a " + doba.get(ChronoUnit.DAYS) + " dní");
 
 
-      List<Room>roomList = new ArrayList<>();
+        List<Room> roomList = new ArrayList<>();
 
 
         List<Guest> guestList = new ArrayList<>();
@@ -41,9 +34,6 @@ public class Main {
         guestList.add(new Guest("Alena ", "Krasová ", LocalDate.of(1978, 05, 12)));
 
 
-
-
-
         roomList.add(new Room(1, 1, new BigDecimal(1000), true, true));
         roomList.add(new Room(2, 1, new BigDecimal(1000), true, true));
         roomList.add(new Room(3, 3, new BigDecimal(2400), false, true));
@@ -52,16 +42,13 @@ public class Main {
 
         BookingManager bookingManager = new BookingManager();
 
-        bookingManager.add(new Booking(roomList.get(2),guestList.get(0),LocalDate.of(2023,6,1),
-                LocalDate.of(2023,6,7), TypeOfStay.WORKING));
-        bookingManager.add(new Booking(roomList.get(1),guestList.get(1),LocalDate.of(2023,8,18),
-                LocalDate.of(2023,8,21),TypeOfStay.TYPEOFVACATION));
+        bookingManager.add(new Booking(roomList.get(2), guestList.get(0), LocalDate.of(2023, 6, 1),
+                LocalDate.of(2023, 6, 7), TypeOfStay.WORKING));
+        bookingManager.add(new Booking(roomList.get(1), guestList.get(1), LocalDate.of(2023, 8, 18),
+                LocalDate.of(2023, 8, 21), TypeOfStay.TYPEOFVACATION));
 
 
         //guestList.forEach(System.out::println);
-
-
-
 
 
         // 30 jednodenních rezervací pro rekreační pobyty pro cestovní kancelář ABC Relax
@@ -119,42 +106,27 @@ public class Main {
                 }
 
             }
-            System.out.println("Počet rezervací je:  "+bookingManager.getNumberOfBookings());
-            System.out.println("Počet pracovních pobytů je:  "+bookingManager.getNumberOfWorkingBookings());
+            System.out.println("Počet rezervací je:  " + bookingManager.getNumberOfBookings());
+            System.out.println("Počet pracovních pobytů je:  " + bookingManager.getNumberOfWorkingBookings());
 
-            System.out.println(""                       );
+            System.out.println("");
             System.out.println("Výpis všech rezervací: ");
-            System.out.println(""                       );
+            System.out.println("");
             bookingManager.getPrintAllReservations();
-            System.out.println(""                       );
-            System.out.println("Průměrný počet hostů na rezervaci: "+bookingManager.getAverageNumberOfGuestsPerReservation());
-            System.out.println(""                       );
+            System.out.println("");
+            System.out.println("Průměrný počet hostů na rezervaci: " + bookingManager.getAverageNumberOfGuestsPerReservation());
+            System.out.println("");
             System.out.println("Prvních osm rekreačních rezervací: ");
             bookingManager.getTheFirstEightHolidayReservations();
-            System.out.println(""                       );
-            System.out.println("Počet pobytů:"                       );
-           System.out.println(bookingManager.getCalculatingTheLengthOfStays());
-            System.out.println(""                       );
-            System.out.println("Cena objednávek:"                       );
+            System.out.println("");
+            System.out.println("Počet pobytů:");
+            System.out.println(bookingManager.getCalculatingTheLengthOfStays());
+            System.out.println("");
+            System.out.println("Cena objednávek:");
             bookingManager.getPriceOfOrders();
 
 
-
-
-
-
-
-
-
-
-
-
         }
-
-
-
-
-
 
 
     }

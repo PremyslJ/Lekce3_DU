@@ -57,7 +57,7 @@ public class BookingManager {
         int i = 0;
 
         for (Booking booking : bookings) {
-            for (; i < 8; ) {
+            while (i < 8) {
                 if (booking.getTypeOfStay() == TypeOfStay.TYPEOFVACATION) {
                     i++;
                     System.out.println(booking.getReservationsFrom() +
